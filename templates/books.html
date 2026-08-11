@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<header>
+<div class="logo">ShopEase</div>
+
+<nav>
+<ul>
+<li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'products' %}">Products</a></li>
+                <li><a href="{% url 'categories' %}">Categories</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+</ul>
+</nav>
+</header>
+
+<section class="products">
+
+<h1>Books</h1>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="{% static 'images/programming.jpg' %}" alt="Programming Book" class="product-image">
+<h3>Programming Book</h3>
+<p>₹699</p>
+<a href="{% url 'payment' %}"><button>Buy Now</button></a>
+</div>
+
+<div class="product-card">
+<img src="{% static 'images/story.jpg' %}" alt="Story Book" class="product-image">
+<h3>Story Book</h3>
+<p>₹499</p>
+<a href="{% url 'payment' %}"><button>Buy Now</button></a>
+</div>
+
+<div class="product-card">
+<img src="{% static 'images/science.jpg' %}" alt="Science Book" class="product-image">
+<h3>Science Book</h3>
+<p>₹899</p>
+<a href="{% url 'payment' %}"><button>Buy Now</button></a>
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>

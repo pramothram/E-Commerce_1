@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+<div class="logo">ShopEase</div>
+
+<nav>
+<ul>
+<li><a href="/">Home</a></li>
+                <li><a href="{% url 'products' %}">Products</a></li>
+                <li><a href="{% url 'categories' %}">Categories</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+
+</ul>
+</nav>
+</header>
+
+<section class="products">
+
+<h1>Sports</h1>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="{% static 'images/bat.jpg' %}" alt="Cricket Bat" class="product-image">
+<h3>Cricket Bat</h3>
+<p>₹1500</p>
+<a href="{% url 'payment' %}"><button>Buy Now</button></a>
+</div>
+
+<div class="product-card">
+<img src="{% static 'images/football.jpg' %}" alt="Football" class="product-image">
+<h3>Football</h3>
+<p>₹999</p>
+<a href="{% url 'payment' %}"><button>Buy Now</button></a>
+</div>
+
+<div class="product-card">
+<img src="{% static 'images/badminton.jpg' %}" alt="Badminton Racket" class="product-image">
+<h3>Badminton Racket</h3>
+<p>₹1800</p>
+<a href="{% url 'payment' %}"><button>Buy Now</button></a>
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>

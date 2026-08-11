@@ -1,0 +1,65 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+<header>
+<div class="logo">ShopEase</div>
+
+<nav>
+<ul>
+<li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'products' %}">Products</a></li>
+                <li><a href="{% url 'categories' %}">Categories</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+
+</ul>
+</nav>
+</header>
+
+<section class="products">
+
+<h1>Fashion</h1>
+
+<div class="product-grid">
+
+<div class="product-card">
+<img src="{% static 'images/tshirt.jpg' %}" alt="T-Shirt" class="product-image">
+<h3>T-Shirt</h3>
+<p>₹799</p>
+<a href="{% url 'payment' %}"><button>Buy Now</button></a>
+</div>
+
+<div class="product-card">
+<img src="{% static 'images/jeans.jpg' %}" alt="Jeans" class="product-image">
+<h3>Jeans</h3>
+<p>₹1499</p>
+<a href="{% url 'payment' %}"><button>Buy Now</button></a>
+</div>
+
+<div class="product-card">
+<img src="{% static 'images/jacket.jpg' %}" alt="Jacket" class="product-image">
+<h3>Jacket</h3>
+<p>₹2499</p>
+<a href="{% url 'payment' %}"><button>Buy Now</button></a>
+</div>
+<div class="product-card">
+<img src="{% static 'images/saree.webp' %}" alt="Saree" class="product-image">
+<h3>Saree</h3>
+<p>₹1099</p>
+<a href="{% url 'payment' %}"><button>Buy Now</button></a>
+</div>
+
+</div>
+
+</section>
+
+</body>
+</html>

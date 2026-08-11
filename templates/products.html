@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body style=background:linear-gradient(135deg,#4f46e5,#7c3aed,#0ea5e9);>
+
+<header>
+    <div class="logo">ShopEase</div>
+
+    <nav>
+        <ul>
+            <li><a href="/">Home</a></li>
+                <li><a href="{% url 'products' %}">Products</a></li>
+                <li><a href="{% url 'categories' %}">Categories</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            
+        </ul>
+    </nav>
+</header>
+
+<section class="products">
+    <h2>Our Products</h2>
+
+    <div class="product-container">
+
+         <div class="product-card">
+                <img src="{% static 'images/dresssss.jpg' %}" alt="Latest Fashion">
+                <h3>Latest Fashion</h3>
+                <p>Starts From $99</p>
+                <a href="{% url 'fashion' %}">View Details</a>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static 'images/electro.jpg' %}" alt="">
+                <h3>Electronics
+                </h3>
+                <p>Starts From $1000</p>
+                <a href="{% url 'electronics' %}">View Details</a>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static 'images/footww.jpg' %}" alt="">
+                <h3>Footwear</h3>
+                <p>Starts From $799</p>
+                <a href="{% url 'footwear' %}">View Details</a>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static 'images/home appli.jpg' %}" alt="">
+                <h3>Home Appliances</h3>
+                <p>Starts From $1000</p>
+                <a href="{% url 'home_appliances' %}">View Details</a>
+            </div>
+
+            <div class="product-card">
+                <img src="{% static 'images/books11.jpg' %}" alt="">
+                <h3>Books</h3>
+                <p>Starts From $999</p>
+                <a href="{% url 'books' %}">View Details</a>
+            </div>
+            <div class="product-container">
+
+    {% for product in products %}
+
+    <div class="product-card">
+
+        {% if product.image %}
+            <img src="{{ product.image.url }}" alt="{{ product.name }}">
+        {% endif %}
+
+        <h3>{{ product.name }}</h3>
+
+        <p>Category: {{ product.category }}</p>
+
+        <p>₹{{ product.price }}</p>
+
+        <p>{{ product.description }}</p>
+
+        <a href="#">View Details</a>
+
+    </div>
+
+    {% empty %}
+
+    <p>No products available.</p>
+
+    {% endfor %}
+
+</div>
+
+    </div>
+
+
+</body>
+</html>

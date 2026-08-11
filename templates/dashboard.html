@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopEase | Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f7fb;
+}
+
+/* Header */
+
+header{
+    background:#2874f0;
+    color:white;
+    padding:18px 60px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+}
+
+.logo{
+    font-size:30px;
+    font-weight:700;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:25px;
+    font-weight:500;
+}
+
+nav a:hover{
+    text-decoration:underline;
+}
+
+/* Hero */
+
+.hero{
+    background:white;
+    margin:30px;
+    padding:35px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.hero h1{
+    color:#2874f0;
+    margin-bottom:10px;
+}
+
+.hero p{
+    color:#666;
+}
+
+/* Cards */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:25px;
+    margin:30px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+}
+
+.card h2{
+    color:#2874f0;
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+    font-size:15px;
+}
+
+.number{
+    font-size:35px;
+    font-weight:bold;
+    margin-top:20px;
+    color:#222;
+}
+
+/* Orders */
+
+.orders{
+    margin:30px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.orders h2{
+    color:#2874f0;
+    margin-bottom:20px;
+}
+
+table{
+    width:100%;
+    border-collapse:collapse;
+}
+
+table th{
+    background:#2874f0;
+    color:white;
+    padding:15px;
+}
+
+table td{
+    padding:15px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
+
+.status{
+    padding:6px 15px;
+    border-radius:20px;
+    color:white;
+    font-size:14px;
+}
+
+.delivered{
+    background:#28a745;
+}
+
+.processing{
+    background:#ff9800;
+}
+
+.cancelled{
+    background:#dc3545;
+}
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:#777;
+}
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+}
+
+nav{
+    margin-top:15px;
+}
+
+nav a{
+    display:inline-block;
+    margin:10px;
+}
+
+table{
+    display:block;
+    overflow-x:auto;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">ShopEase</div>
+
+<nav>
+<a href="">Home</a>
+<a href="#">Products</a>
+<a href="#">Orders</a>
+<a href="#">Profile</a>
+<a href="#">Logout</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Welcome Back, Pramothram 👋</h1>
+
+<p>
+Manage your orders, wishlist, shopping cart, and account details from your dashboard.
+</p>
+
+</section>
+
+<section class="cards">
+
+<div class="card">
+<h2>Total Orders</h2>
+<p>Your completed and active orders.</p>
+<div class="number">12</div>
+</div>
+
+<div class="card">
+<h2>Wishlist</h2>
+<p>Products saved for later.</p>
+<div class="number">8</div>
+</div>
+
+<div class="card">
+<h2>Shopping Cart</h2>
+<p>Items waiting for checkout.</p>
+<div class="number">3</div>
+</div>
+
+<div class="card">
+<h2>Profile</h2>
+<p>Update your personal information.</p>
+<div class="number">✓</div>
+</div>
+
+</section>
+
+<section class="orders">
+
+<h2>Recent Orders</h2>
+
+<table>
+
+<tr>
+<th>Order ID</th>
+<th>Product</th>
+<th>Date</th>
+<th>Amount</th>
+<th>Status</th>
+</tr>
+
+<tr>
+<td>#1001</td>
+<td>Wireless Headphones</td>
+<td>12 Jul 2026</td>
+<td>₹2,999</td>
+<td><span class="status delivered">Delivered</span></td>
+</tr>
+
+<tr>
+<td>#1002</td>
+<td>Running Shoes</td>
+<td>10 Jul 2026</td>
+<td>₹1,899</td>
+<td><span class="status processing">Processing</span></td>
+</tr>
+
+<tr>
+<td>#1003</td>
+<td>Smart Watch</td>
+<td>08 Jul 2026</td>
+<td>₹4,499</td>
+<td><span class="status cancelled">Cancelled</span></td>
+</tr>
+
+</table>
+
+</section>
+
+<footer>
+
+© 2026 ShopEase. All Rights Reserved.
+
+</footer>
+
+</body>
+</html>

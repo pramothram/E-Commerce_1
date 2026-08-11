@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body style=background:linear-gradient(135deg,#4f46e5,#7c3aed,#0ea5e9);>
+
+    <!-- Header -->
+    <header>
+        <div class="logo">ShopEase</div>
+
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="{% url 'products' %}">Products</a></li>
+                <li><a href="{% url 'categories' %}">Categories</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
+                
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Welcome to ShopEase</h1>
+            <p>Discover the latest fashion, electronics, and more at the best prices.</p>
+            <a href="{% url 'categories' %}" class="btn">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products">
+
+        <h2>Featured Products</h2>
+
+        <div class="product-container">
+
+            <div class="product-card">
+                
+                <h3>Latest Fashion</h3>
+                <p>Starts From $99</p>
+            </div>
+
+            <div class="product-card">
+                
+                <h3>Electronics
+                </h3>
+                <p>Starts From $1000</p>
+            </div>
+
+            <div class="product-card">
+                
+                <h3>Footwear</h3>
+                <p>Starts From $799</p>
+
+            </div>
+
+            <div class="product-card">
+                
+                <h3>Home Appliances</h3>
+                <p>Starts From $1000</p>
+            </div>
+
+            <div class="product-card">
+                
+                <h3>Books</h3>
+                <p>Starts From $999</p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 ShopEase. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

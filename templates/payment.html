@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Payment Page</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg,#4f46e5,#7c3aed,#0ea5e9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.payment-box {
+    background: white;
+    width: 350px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px #aaa;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.pay-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.pay-btn:hover {
+    background: #218838;
+}
+</style>
+
+</head>
+
+<body>
+
+<div class="payment-box">
+
+<h2>Payment</h2>
+
+<input type="text" placeholder="Card Holder Name">
+
+<input type="number" placeholder="Card Number">
+
+<input type="text" placeholder="Expiry Date">
+
+
+<select>
+    <option>Select Payment Method</option>
+    <option>Credit Card</option>
+    <option>Debit Card</option>
+    <option>UPI</option>
+    <option>Net Banking</option>
+</select>
+
+<button class="pay-btn" onclick="paymentSuccess()">
+Pay Now
+</button>
+
+</div>
+
+
+<script>
+function paymentSuccess(){
+    alert("Payment Successful!");
+    window.location.href="index.html";
+}
+</script>
+
+</body>
+</html>

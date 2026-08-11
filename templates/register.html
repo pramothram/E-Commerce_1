@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopEase | Register</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#f5f5f5;
+}
+
+.container{
+    display:flex;
+    min-height:100vh;
+}
+
+/* Left Side */
+
+.left{
+    flex:1;
+    background:linear-gradient(135deg,#2874f0,#0d47a1);
+    color:#fff;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    padding:60px;
+}
+
+.left h1{
+    font-size:48px;
+    margin-bottom:20px;
+}
+
+.left p{
+    font-size:18px;
+    text-align:center;
+    line-height:30px;
+    max-width:450px;
+}
+
+.left img{
+    width:320px;
+    margin-top:40px;
+}
+
+/* Right Side */
+
+.right{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    padding:30px;
+}
+
+.register-box{
+    width:430px;
+    background:#fff;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.logo{
+    text-align:center;
+    font-size:34px;
+    font-weight:700;
+    color:#2874f0;
+}
+
+.subtitle{
+    text-align:center;
+    color:#666;
+    margin:10px 0 30px;
+}
+
+.input-group{
+    margin-bottom:18px;
+}
+
+.input-group label{
+    display:block;
+    margin-bottom:8px;
+    font-size:14px;
+    font-weight:500;
+    color:#444;
+}
+
+.input-group input{
+    width:100%;
+    padding:14px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+    transition:.3s;
+}
+
+.input-group input:focus{
+    outline:none;
+    border-color:#2874f0;
+}
+
+.register-btn{
+    width:100%;
+    padding:14px;
+    background:#2874f0;
+    color:#fff;
+    border:none;
+    border-radius:8px;
+    font-size:17px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.register-btn:hover{
+    background:#1558c0;
+}
+
+.divider{
+    text-align:center;
+    margin:25px 0;
+    color:#999;
+    position:relative;
+}
+
+.divider::before,
+.divider::after{
+    content:"";
+    position:absolute;
+    width:42%;
+    height:1px;
+    background:#ddd;
+    top:50%;
+}
+
+.divider::before{
+    left:0;
+}
+
+.divider::after{
+    right:0;
+}
+
+.google-btn{
+    width:100%;
+    padding:13px;
+    border:1px solid #ddd;
+    background:#fff;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.google-btn:hover{
+    background:#f7f7f7;
+}
+
+.login-link{
+    text-align:center;
+    margin-top:25px;
+    color:#555;
+}
+
+.login-link a{
+    text-decoration:none;
+    color:#2874f0;
+    font-weight:600;
+}
+
+.footer{
+    text-align:center;
+    margin-top:25px;
+    color:#999;
+    font-size:13px;
+}
+
+@media(max-width:900px){
+
+.container{
+    flex-direction:column;
+}
+
+.left{
+    display:none;
+}
+
+.register-box{
+    width:100%;
+    max-width:430px;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<div class="container">
+
+<div class="left">
+
+<h1>Join ShopEase</h1>
+
+<p>
+Create your free account and enjoy secure shopping,
+exclusive offers, fast checkout, and order tracking.
+</p>
+
+<img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="Shopping">
+
+</div>
+
+<div class="right">
+
+<div class="register-box">
+
+<div class="logo">ShopEase</div>
+
+<p class="subtitle">
+Create your account
+</p>
+
+<form method="POST">
+    {% csrf_token %}
+
+<div class="input-group">
+<label>Full Name</label>
+<input
+        type="text"
+        name="fullname"
+        placeholder="Enter your full name"
+        required
+    >
+</div>
+
+<div class="input-group">
+<label>Email Address</label>
+ <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+    ></div>
+
+<div class="input-group">
+<label>Phone Number</label>
+<input
+        type="tel"
+        name="phone"
+        placeholder="Enter your phone number"
+        required
+    >
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input
+        type="password"
+        name="password"
+        placeholder="Create a password"
+        required
+    >
+</div>
+
+<div class="input-group">
+<label>Confirm Password</label>
+<input
+        type="password"
+        name="confirm_password"
+        placeholder="Confirm your password"
+        required
+    >
+</div>
+
+<button type="submit" class="register-btn"><a href="{% url 'login' %}">
+Create Account
+</button></a>
+
+<div class="divider">OR</div>
+
+<button type="button" class="google-btn">
+Sign Up with Google
+</button>
+
+<div class="login-link">
+Already have an account?
+<a href="{% url 'login' %}">Login</a>
+</div>
+
+<div class="footer">
+© 2026 ShopEase. All Rights Reserved.
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

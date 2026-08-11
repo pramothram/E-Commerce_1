@@ -1,0 +1,76 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body style=background:linear-gradient(135deg,#4f46e5,#7c3aed,#0ea5e9);>
+
+
+<header>
+<div class="logo">ShopEase</div>
+
+<nav>
+<ul>
+                 <li><a href="/">Home</a></li>
+                <li><a href="{% url 'products' %}">Products</a></li>
+                <li><a href="{% url 'categories' %}">Categories</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+</ul>
+</nav>
+
+</header>
+
+<section class="products">
+
+    <h2>Shop by Category</h2>
+
+    <div class="product-container">
+
+        <a href="{% url 'electronics' %}" class="category-link">
+            <div class="product-card">
+                <h3>Electronics</h3>
+            </div>
+        </a>
+
+        <a href="{% url 'fashion' %}" class="category-link">
+            <div class="product-card">
+                <h3>Fashion</h3>
+            </div>
+        </a>
+
+        <a href="{% url 'footwear' %}" class="category-link">
+            <div class="product-card">
+                <h3>Footwear</h3>
+            </div>
+        </a>
+
+        <a href="{% url 'home_appliances' %}" class="category-link">
+            <div class="product-card">
+                <h3>Home Appliances</h3>
+            </div>
+        </a>
+
+        <a href="{% url 'books' %}" class="category-link">
+            <div class="product-card">
+                <h3>Books</h3>
+            </div>
+        </a>
+
+        <a href="{% url 'sports' %}" class="category-link">
+            <div class="product-card">
+                <h3>Sports</h3>
+            </div>
+        </a>
+
+    </div>
+
+</section>
+
+</body>
+
+</html>
