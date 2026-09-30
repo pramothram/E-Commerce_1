@@ -249,6 +249,14 @@ and more. Secure shopping with fast delivery and easy returns.
 Welcome Back! Login to continue shopping.
 </p>
 
+    {% if messages %}
+    {% for message in messages %}
+        <div class="error-message">
+            {{ message }}
+        </div>
+    {% endfor %}
+{% endif %}
+
 <form method="POST">
     {% csrf_token %}
 
