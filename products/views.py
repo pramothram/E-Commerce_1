@@ -86,36 +86,36 @@ def register(request):
 
 
 # LOGIN PAGE
+# LOGIN PAGE
 def login_view(request):
 
     if request.method == "POST":
 
-        email = request.POST.get("email")
-        password = request.POST.get("password")
+        email = request.POST.get("email", "").strip()
+        password = request.POST.get("password", "")
 
+        # If an old user session exists, clear it first
+        if request.user.is_authenticated:
+            logout(request)
+
+        # Check email + password
         user = authenticate(
-            request,
+            request=request,
             username=email,
             password=password
         )
 
         if user is not None:
-
             login(request, user)
-
+            messages.success(request, "Login successful!")
             return redirect("home")
 
         else:
-
-            messages.error(
-                request,
-                "Invalid email or password."
-            )
-
+            messages.error(request, "Invalid email or password.")
             return redirect("login")
 
     return render(request, "login.html")
-
+    
 
 # LOGOUT
 def logout_view(request):
