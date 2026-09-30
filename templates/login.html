@@ -257,12 +257,12 @@ and more. Secure shopping with fast delivery and easy returns.
 <div class="logo">ShopEase</div>
 
 <p class="subtitle">
-Welcome Back! Login to continue shopping.
+    Welcome Back! Login to continue shopping.
 </p>
 
-    {% if messages %}
+{% if messages %}
     {% for message in messages %}
-        <div class="error-message">
+        <div class="message {{ message.tags }}">
             {{ message }}
         </div>
     {% endfor %}
@@ -270,7 +270,6 @@ Welcome Back! Login to continue shopping.
 
 <form method="POST">
     {% csrf_token %}
-
 <div class="input-group">
 <label>Email Address</label>
  <input
