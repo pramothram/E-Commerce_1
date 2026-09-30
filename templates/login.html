@@ -202,10 +202,7 @@ body{
     font-size:13px;
     color:#999;
 }
-    .error-message {
-    background: #ffe5e5;
-    color: #d8000c;
-    border: 1px solid #ffb3b3;
+.message {
     padding: 12px 15px;
     border-radius: 8px;
     margin-bottom: 20px;
@@ -214,6 +211,23 @@ body{
     font-weight: 500;
 }
 
+.message.error {
+    background: #ffe5e5;
+    color: #d8000c;
+    border: 1px solid #ffb3b3;
+}
+
+.message.success {
+    background: #e7f8ed;
+    color: #188038;
+    border: 1px solid #a8dfb9;
+}
+
+.message.warning {
+    background: #fff4d6;
+    color: #8a6500;
+    border: 1px solid #f0d98c;
+}
 @media(max-width:900px){
 
 .container{
