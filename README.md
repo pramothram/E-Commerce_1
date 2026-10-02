@@ -36,11 +36,6 @@ E-Commerce/
 ├── media/
 ├── ecommerce/
 └── app/
-```
-
-
-
-
 ## 👨‍💻 Developed By
 
 **PRAMOTHRAM**
